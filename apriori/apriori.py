@@ -8,7 +8,7 @@ class cached_property(object):
     """A cached property only computed once
     """
     def __init__(self, func):
-        self.func = func
+        self.func = func 
 
     def __get__(self, obj, cls):
         if obj is None: return self
@@ -63,33 +63,6 @@ class Base(object):
 
 
 class Apriori(Base):
-    """A simple implementation of Apriori algorithm
-        Example:
-        
-        dataset = [
-            ['bread', 'milk'],
-            ['bread', 'diaper', 'beer', 'egg'],
-            ['milk', 'diaper', 'beer', 'cola'],
-            ['bread', 'milk', 'diaper', 'beer'],
-            ['bread', 'milk', 'diaper', 'cola'],
-        ]
-        minsup = minconf = 0.6
-
-        apriori = Apriori(dataset, minsup, minconf)
-        apriori.run()
-        apriori.print_rule()
-
-        Results:
-            Rules
-            milk --> bread (confidence = 0.75)
-            bread --> milk (confidence = 0.75)
-            diaper --> bread (confidence = 0.75)
-            bread --> diaper (confidence = 0.75)
-            beer --> diaper (confidence = 1.0)
-            diaper --> beer (confidence = 0.75)
-            diaper --> milk (confidence = 0.75)
-            milk --> diaper (confidence = 0.75)
-    """
 
     def __init__(self, transaction_list, minsup, minconf, selected_items=None):
         """Initialization
@@ -98,7 +71,6 @@ class Apriori(Base):
         :param minconf: minimum confidence
         :param selected_items: selected items in frequent itemset, default `None`
         """
-        self.transaction_list = transaction_list
         self.transaction_list_full_length = len(transaction_list)
         self.minsup = minsup
         self.minconf = minconf
