@@ -84,7 +84,6 @@ def option2():
     except IOError:
         print("Error: could not read file", filepath)
         return
-    print(dataset)
     while True:
         display_mini_menu()
         user_input = input("Enter the option number: ")
