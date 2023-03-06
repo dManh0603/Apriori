@@ -19,9 +19,10 @@ def run_Apriori(dataset, minsup, minconf):
 
 def get_data_from_input():
     input_array = []
+    count = 1
     while True:
         # Prompt the user for input and store it as a string
-        input_str = input("Enter a line of input (or type 'done' to finish): ")
+        input_str = input("Enter items of transaction {}:  (or type 'done' to finish): ".format(count))
 
         # If the user types 'done', break out of the loop and return the input array
         if input_str == "done":
@@ -29,7 +30,7 @@ def get_data_from_input():
 
         # Split the input string into words and store it as an array
         input_arr = input_str.split()
-
+        count+=1
         # Add the input array to the larger input array
         input_array.append(input_arr)
 
