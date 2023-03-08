@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from . import Apriori, ImprovedApriori
+from apriori import Apriori, ImprovedApriori
 
 
 dataset1 = [

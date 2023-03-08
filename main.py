@@ -3,7 +3,6 @@ import pandas as pd
 import csv
 
 
-
 def run_Apriori(dataset, minsup, minconf):
 # # load Apriori model without selected_items
     ap = Apriori(dataset, minsup, minconf)
@@ -47,6 +46,7 @@ def change_config():
                 raise ValueError()
 
             # If both inputs are valid, return them
+            print("You have succesfully changed the config!")
             return min_support, min_confidence
         except ValueError:
             # If either input is not a valid number or not within the range, print an error message and ask the user to try again
@@ -59,10 +59,8 @@ def option1():
     while True:
         display_mini_menu()
         user_input = input("Enter the option number: ")
-        if (user_input == "3"):
+        if (user_input == "2"):
             break
-        elif (user_input == "2"):
-            option3()
         elif (user_input == "1"):
             print("!!! Apriori algorithm is running !!!")
             print("!!! Result: !!!")
@@ -88,10 +86,8 @@ def option2():
     while True:
         display_mini_menu()
         user_input = input("Enter the option number: ")
-        if user_input == "3":
+        if user_input == "2":
             break
-        elif user_input == "2":
-            option3()
         elif user_input == "1":
             run_Apriori(dataset=dataset, minsup=minsup, minconf=minconf)
             input("Press anything to return to main menu!\n")
@@ -107,6 +103,8 @@ def option3():
 
 # Define a function to display the menu options
 def display_menu():
+    print("\n")
+    print("Welcome to the the Apriori Association Rule Miner!")
     print("|+++++++++++++++++++++++++++++++++++++++++++++++++|")
     print("|This is the current config:                      |")
     print("|\tMin support:    ", minsup, "                     |")
@@ -123,8 +121,7 @@ def display_mini_menu():
     print("\n")
     print("Choose an option:")
     print("1.Start mining")
-    print("2.Change config")
-    print("3.Cancel")
+    print("2.Cancel")
 
 
 # Define a dictionary that maps option numbers to functions
@@ -140,7 +137,7 @@ minconf = 0.6
 
 
 # Start the program
-print("\n Welcome to the the Apriori Association Rule Miner!")
+
 
 while True:
     # Display the menu and prompt for user input

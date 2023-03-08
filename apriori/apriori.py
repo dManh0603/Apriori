@@ -8,7 +8,7 @@ class cached_property(object):
     """A cached property only computed once
     """
     def __init__(self, func):
-        self.func = func 
+        self.func = func
 
     def __get__(self, obj, cls):
         if obj is None: return self
@@ -71,6 +71,7 @@ class Apriori(Base):
         :param minconf: minimum confidence
         :param selected_items: selected items in frequent itemset, default `None`
         """
+        self.transaction_list = transaction_list
         self.transaction_list_full_length = len(transaction_list)
         self.minsup = minsup
         self.minconf = minconf

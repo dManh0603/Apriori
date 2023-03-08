@@ -25,3 +25,7 @@ ap.print_frequent_itemset()
 # print out rules
 ap.print_rule()
 ```
+
+### LICENSE
+
+MIT
